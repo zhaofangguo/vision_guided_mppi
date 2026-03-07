@@ -4,42 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <meta name="title" content="Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI">
-  <meta name="description" content="This work introduces a reference-free method for time-optimal drone racing by incorporating a gate progress objective, derived from RL reward shaping, directly into a Model Predictive Path Integral (MPPI) formulation.">
-  <meta name="keywords" content="Model Predictive Control, Autonomous Drone Racing, MPPI">
-  <meta name="author" content="Fangguo Zhao, Xin Guan, Shuo Li">
+  <meta name="title" content="Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields">
+  <meta name="description" content="This work proposes a fully onboard, vision-guided optimal control framework that enables reference-free agile flight through arbitrarily placed and oriented gates using Gate-SDF integrated with MPPI.">
+  <meta name="keywords" content="Autonomous Drone Racing, Model Predictive Path Integral (MPPI), Neural Signed Distance Fields, Vision-Guided Control">
+  <meta name="author" content="Fangguo Zhao, Hanbing Zhang, Zhouheng Li, Xin Guan, Shuo Li">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Zhejiang University, College of Control Science and Engineering">
-  <meta property="og:title" content="Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI">
-  <meta property="og:description" content="This work introduces a reference-free method for time-optimal drone racing by incorporating a gate progress objective, derived from RL reward shaping, directly into a Model Predictive Path Integral (MPPI) formulation.">
+  <meta property="og:title" content="Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields">
+  <meta property="og:description" content="This work proposes a fully onboard, vision-guided optimal control framework that enables reference-free agile flight through arbitrarily placed and oriented gates using Gate-SDF integrated with MPPI.">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Rethinking Reference Trajectories in Agile Drone Racing - Research Preview">
-  <meta property="article:published_time" content="2025-09-15T00:00:00.000Z">
+  <meta property="og:image:alt" content="Vision-Guided MPPI for Agile Drone Racing - Research Preview">
   <meta property="article:author" content="Fangguo Zhao">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="Model Predictive Control">
   <meta property="article:tag" content="Autonomous Drone Racing">
+  <meta property="article:tag" content="MPPI">
+  <meta property="article:tag" content="Neural SDF">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ZJU_China">
-  <meta name="twitter:creator" content="@YourTwitterHandle">
-  <meta name="twitter:title" content="Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI">
-  <meta name="twitter:description" content="This work introduces a reference-free method for time-optimal drone racing by incorporating a gate progress objective, derived from RL reward shaping, directly into a Model Predictive Path Integral (MPPI) formulation.">
+  <meta name="twitter:title" content="Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields">
+  <meta name="twitter:description" content="This work proposes a fully onboard, vision-guided optimal control framework that enables reference-free agile flight through arbitrarily placed and oriented gates using Gate-SDF integrated with MPPI.">
   <meta name="twitter:image" content="">
-  <meta name="twitter:image:alt" content="Rethinking Reference Trajectories in Agile Drone Racing - Research Preview">
+  <meta name="twitter:image:alt" content="Vision-Guided MPPI for Agile Drone Racing - Research Preview">
 
-  <meta name="citation_title" content="Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI">
+  <meta name="citation_title" content="Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields">
   <meta name="citation_author" content="Zhao, Fangguo">
+  <meta name="citation_author" content="Zhang, Hanbing">
+  <meta name="citation_author" content="Li, Zhouheng">
   <meta name="citation_author" content="Guan, Xin">
   <meta name="citation_author" content="Li, Shuo">
   <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="2025">
   <meta name="citation_pdf_url" content="">
   
   <meta name="theme-color" content="#2563eb">
@@ -52,7 +52,7 @@
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>Rethinking Reference Trajectories in Agile Drone Racing</title>
+  <title>Vision-Guided MPPI for Agile Drone Racing</title>
   
   <link rel="icon" type="image/x-icon" href="">
   <link rel="apple-touch-icon" href="">
@@ -87,58 +87,49 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI</h1>
+            <h1 class="title is-1 publication-title">Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="" target="_blank">Fangguo Zhao</a>,</span>
-                <span class="author-block">
-                  <a href="" target="_blank">Xin Guan</a>,</span>
-                  <span class="author-block">
-                    <a href="" target="_blank">Shuo Li</a>
-                  </span>
-                  </div>
+              <span class="author-block">
+                <a href="" target="_blank">Hanbing Zhang</a>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Zhouheng Li</a>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xin Guan</a>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Shuo Li</a>
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">College of Control Science and Engineering, Zhejiang University<br></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">College of Control Science and Engineering, Zhejiang University<br></span>
+            </div>
                   
-                  <div class="column has-text-centered">
-                    <span class="tag is-info is-large is-light" style="font-weight: bold; border: 1px solid #2563eb;">
-                      ICRA 2026
-                    </span>
-                  </div>
-
-                  <!-- <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <span class="link-block">
-                        <a href="https://arxiv.org/" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span> -->
-
-                  <span class="link-block">
-                    <a href="https://zhaofangguo.github.io/racing_mppi/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (coming soon)</span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (PDF)</span>
                   </a>
                 </span>
 
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2509.14726" target="_blank"
+                  <a href="#" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a>
-              </span>
+                  </a>
+                </span>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -146,18 +137,20 @@
     </div>
   </div>
 </section>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <source src="static/videos/MPPI_sample.mp4" type="video/mp4">
+        <source src="static/videos/teaser.mp4" type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Fly only with waypints: A reference-free framework for agile drone racing via Model Predictive Path Integral (MPPI) control, capable of optimizing discontinuous, non-differentiable objectives in real-time.
+        A vision-guided, reference-free framework for agile drone racing utilizing learned Neural Signed Distance Fields (Gate-SDF) within an MPPI controller, navigating arbitrary gate poses in real-time.
       </h2>
     </div>
   </div>
 </section>
+
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -165,212 +158,273 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While model-based controllers have demonstrated remarkable performance in autonomous drone racing, their performance is often constrained by the reliance on pre-computed reference trajectories. Conventional approaches, such as <i>trajectory tracking</i>, demand a dynamically feasible, full-state reference, whereas <i>contouring control</i> relaxes this requirement to a geometric path but still necessitates a reference. Recent advancements in reinforcement learning (RL) have revealed that many model-based controllers optimize surrogate objectives, such as trajectory tracking, rather than the primary racing goal of directly maximizing progress through gates. Inspired by these findings, this work introduces a reference-free method for time-optimal racing by incorporating this gate progress objective, derived from RL reward shaping, directly into the Model Predictive Path Integral (MPPI) formulation. The sampling-based nature of MPPI makes it uniquely capable of optimizing the discontinuous and non-differentiable objective in real-time. We also establish a unified framework that leverages MPPI to systematically and fairly compare three distinct objective functions with a consistent dynamics model and parameter set: classical trajectory tracking, contouring control, and the proposed gate progress objective. We compare the performance of these three objectives when solved via both MPPI and a traditional gradient-based solver. Our results demonstrate that the proposed reference-free approach achieves competitive racing performance, rivaling or exceeding reference-based methods.
+            Autonomous drone racing requires the tight coupling of perception, planning, and control under extreme agility. However, recent approaches typically rely on precomputed spatial reference trajectories or explicit 6-DoF gate pose estimation, rendering them brittle to spatial perturbations, unmodeled track changes, and sensor noise. Conversely, end-to-end learning policies frequently overfit to specific track layouts and struggle with zero-shot generalization. To address these fundamental limitations, we propose a fully onboard, vision-guided optimal control framework that enables reference-free agile flight through arbitrarily placed and oriented gates. Central to our approach is Gate-SDF, a novel, implicitly learned neural signed distance field. Gate-SDF directly processes raw, noisy depth images to predict a continuous spatial field that provides both collision repulsion and active geometric guidance toward the valid traversal area. We seamlessly integrate this representation into a sampling-based Model Predictive Path Integral (MPPI) controller. By fully exploiting GPU parallelism, the framework evaluates these continuous spatial constraints across thousands of simulated trajectory rollouts simultaneously in real time. Furthermore, our formulation inherently maintains spatial consistency, ensuring robust navigation even under severe visual occlusion during aggressive maneuvers. Extensive simulations and real-world experiments demonstrate that the proposed system achieves high-speed agile flight and successfully navigates unseen tracks subject to severe unmodeled gate displacements and orientation perturbations.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3 has-text-centered">Framework Overview</h2>
-        <img src="static/images/full_fig.png" alt="A conceptual illustration of the MPPI framework comparing reference-free gate progress with reference-based objectives like Trajectory Tracking and Contouring Control." style="width: 100%; border-radius: 10px;"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          A conceptual illustration of the unified MPPI framework. (a) The core sampling and weighting stage of MPPI. (b) A comparison of the proposed reference-free gate progress objective with two conventional reference-based objectives: Trajectory Tracking and Contouring Control.
-        </h2>
-      </div>
-      <div class="container">
-        <!-- <h2 class="title is-3 has-text-centered">Framework Overview</h2> -->
-        <img src="static/images/gate_switch_with_sample.png" alt="A conceptual illustration of the MPPI framework comparing reference-free gate progress with reference-based objectives like Trajectory Tracking and Contouring Control." style="width: 100%; border-radius: 10px;"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          The left panel shows states within the predictive horizon being assigned different target gate indices (using different color) to achieve rapid progress along the track. To ensure the stable switching, we propose the temporally consistent strategy shown on the right, where an index switch only occurs for states that pass through the gate between two consecutive control loops. This logic, combined with the gate progress objective enables reference-free racing.
-        </h2>
-      </div>
-    </div>
-</section>
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/6dNSZ2FRhfA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Gate-SDF: Dynamic Neural Signed Distance Field</h2>
+        <div class="publication-video" style="margin-top: 2rem; margin-bottom: 2rem;">
+          <video poster="" id="gate-sdf-video" autoplay controls muted loop style="width: 100%; border-radius: 10px;" preload="metadata">
+            <source src="static/videos/gate_sdf.mp4" type="video/mp4">
+          </video>
         </div>
+        <h2 class="subtitle has-text-centered">
+          Visualization of the dynamically learned Gate-SDF. The network processes raw depth images to predict a continuous spatial field that provides collision repulsion and active geometric guidance through the traversable opening.
+        </h2>
       </div>
     </div>
   </div>
 </section>
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Framework Overview</h2>
+        <img src="static/images/pipeline.png" alt="Overview of the proposed vision-guided framework combining Neural SDF and MPPI." style="width: 100%; border-radius: 10px; margin-top: 1rem;"/>
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+          Overview of the proposed framework. At each control step, a depth encoder extracts a latent vector which is duplicated and concatenated with each MPPI-sampled state. The SDF decoder evaluates these points to formulate vision-guided safety constraints. Combined with a gate progress objective, the optimal control sequence is derived via cost-weighted averaging.
+        </h2>
+      </div>
+    </div>
+</section>
+
 <section class="section" id="results">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Results</h2>
+    <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem;">Experimental Results</h2>
 
     <h3 class="title is-4">Simulation Results</h3>
     <div class="content has-text-centered" style="margin-bottom: 3rem;">
-      <img src="static/images/results/sim_in_one.png" alt="Flight trajectories generated by our unified MPPI framework on three tracks of increasing difficulty: Circle (a-c), Figure-8 (d-f), and Split-S (g-i). All the flight trajectories are tested under identical system dynamics and controller settings." style="width: 100%; border-radius: 10px;"/>
+      <!-- <img src="static/images/sim_trajectories.png" alt="Visualization of the aggregated MPPI sampled trajectories over complete flight laps color-coded by predicted SDF value." style="width: 100%; border-radius: 10px;"/>
       <p class="has-text-centered" style="margin-top: 0.5rem;">
-        Flight trajectories generated by our unified MPPI framework on three tracks of increasing difficulty: Circle (a-c), Figure-8 (d-f), and Split-S (g-i). All the flight trajectories are tested under identical system dynamics and controller settings.
+        Visualization of the aggregated MPPI trajectory rollouts over three complete flight laps across three tracks with varying gate orientations, color-coded by their predicted SDF values. The network maintains a highly consistent geometric representation over time, and its conformance to varying orientations confirms generalization to unseen spatial configurations.
       </p>
-      <img src="static/images/results/sim_table.png" alt="Comparison across different objectives. 'Opt.' refers to the gradient-based OCP solver, while 'Ours' refers to our MPPI-based implementation." style="width: 100%; border-radius: 10px;"/>
+      
+      <img src="static/images/success_rates.png" alt="Success rates across different track configurations and perturbations." style="width: 100%; border-radius: 10px; margin-top: 2rem;"/>
       <p class="has-text-centered" style="margin-top: 0.5rem;">
-        Comparison across different objectives. 'Opt.' refers to the gradient-based OCP solver, while 'Ours' refers to our MPPI-based implementation.
+        Success rates across different track configurations and perturbation types. The method achieves a 100% success rate under nominal conditions across all speeds. Under moderate position noise, Gate-SDF reactively adjusts the trajectory to maintain high success rates.
       </p>
-  </div>
-  <!-- <h3 class="title is-5">Videos</h3> -->
-    <!-- <div class="columns is-vcentered">
-      <div class="column is-one-third">
-        <div class="field">
-          <label class="label">Track</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="simTrack">
-                <option value="circle">Circle</option>
-                <option value="figure8">Figure-8</option>
-                <option value="spilts">Split-S</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Objective</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="simObjective">
-                <option value="MPC">Trajectory Tracking</option>
-                <option value="MPCC">Contouring Control</option>
-                <option value="RL">Gate Progress (Ours)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Solver</label>
-          <div class="control">
-            <div class="select is-fullwidth">
-              <select id="simSolver">
-                <option value="MPPI">MPPI</option>
-                <option value="acados">Acados (Gradient-based)</option>
-              </select>
-            </div>
-          </div>
-        </div>
+
+      <img src="static/images/lap_visualization.png" alt="Visualization of continuous flight trajectories over consecutive laps with detailed progression of MPPI optimization." style="width: 100%; border-radius: 10px; margin-top: 2rem;"/>
+      <p class="has-text-centered" style="margin-bottom: 3rem; margin-top: 0.5rem;">
+        Visualization of continuous flight trajectories over three consecutive laps on a circular track. The panels show the detailed progression of the MPPI optimization process for specific trajectory segments.
+      </p> -->
+
+      <h3 class="title is-4" style="margin-top: 3rem;">Robustness to Noise Variations Across Speeds</h3>
+      <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+        Visualization of continuous flight trajectories over three consecutive laps on a circular track. Select a configuration below to dynamically load different trajectory visualization results. Each click randomly loads a sample.
+      </p>
+
+      <div class="tabs is-centered is-toggle is-toggle-rounded" style="margin-bottom: 2rem;">
+        <ul id="sim-dynamic-tabs">
+          <li class="is-active" onclick="loadDynamicSimResults('nonoise', this)">
+            <a>No Noise</a>
+          </li>
+          <li onclick="loadDynamicSimResults('noise03', this)">
+            <a>Position Noise 0.3</a>
+          </li>
+          <li onclick="loadDynamicSimResults('noise05', this)">
+            <a>Position Noise 0.5</a>
+          </li>
+          <li onclick="loadDynamicSimResults('orien30', this)">
+            <a>Orientation Noise 30°</a>
+          </li>
+          <li onclick="loadDynamicSimResults('orien60', this)">
+            <a>Orientation Noise 60°</a>
+          </li>
+        </ul>
       </div>
-      <div class="column">
-        <div class="video-container">
-          <img id="simResultImage" src="static/images/results/sim_circle_tracking_mppi.png" alt="Simulation Result Image" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+
+      <div id="dynamic-sim-results-container" style="margin-bottom: 2rem;">
+        </div>
+
+      <script>
+        function loadDynamicSimResults(category, clickedElement) {
+          // Update active tab styling
+          if (clickedElement) {
+            const tabs = document.querySelectorAll('#sim-dynamic-tabs li');
+            tabs.forEach(tab => tab.classList.remove('is-active'));
+            clickedElement.classList.add('is-active');
+          }
+
+          const container = document.getElementById('dynamic-sim-results-container');
+          container.innerHTML = ''; 
+
+          // Position noise 0.3 is only for speeds 5 to 9, others are 5 to 10
+          const speeds = category === 'noise03' ? [5, 6, 7, 8, 9] : [5, 6, 7, 8, 9, 10];
           
-          <video id="simVideoPlayer" src="static/videos/results/sim_circle_tracking_mppi.mp4" controls muted loop preload="metadata" style="width: 100%; border-radius: 10px;"></video>
-          <p id="simVideoDescription" class="has-text-centered" style="margin-top: 0.5rem;"></p>
-        </div>
-      </div>
-    </div> -->
+          const columns = document.createElement('div');
+          columns.className = 'columns is-centered is-multiline is-variable is-2';
 
-    <h3 class="title is-4" style="margin-top: 2rem;">Real-World Experiments</h3>
+          speeds.forEach(speed => {
+            // Random index generator to pick random image from the folder
+            // Assuming there might be up to 5 images named 1.png to 5.png in each folder
+            const randomImgIndex = Math.floor(Math.random() * 5) + 1; 
+            const imgSrc = `static/images/results/simulation_results/${category}/${speed}/${randomImgIndex}.png`;
+
+            const col = document.createElement('div');
+            // If 5 items, use is-one-fifth. If 6 items, use is-2 (which fits 6 columns in Bulma's 12-column grid)
+            col.className = `column ${category === 'noise03' ? 'is-one-fifth' : 'is-2'}`;
+            
+            const imgWrapper = document.createElement('div');
+            imgWrapper.style.display = 'flex';
+            imgWrapper.style.flexDirection = 'column';
+            imgWrapper.style.alignItems = 'center';
+
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `${category} trajectory at speed ${speed}`;
+            img.style.width = '100%';
+            img.style.borderRadius = '8px';
+            img.style.boxShadow = '0 2px 6px rgba(0,0,0,0.1)';
+            
+            // Error handler: If random image index does not exist, fallback to '1.png'
+            img.onerror = function() {
+                if (this.src.endsWith('1.png')) return; // Prevent infinite loop if '1.png' is also missing
+                this.src = `static/images/results/simulation_results/${category}/${speed}/1.png`;
+            };
+
+            const label = document.createElement('p');
+            label.className = 'has-text-weight-semibold is-size-6 mt-3';
+            label.innerText = `Speed ${speed}`;
+
+            imgWrapper.appendChild(img);
+            imgWrapper.appendChild(label);
+            col.appendChild(imgWrapper);
+            columns.appendChild(col);
+          });
+
+          container.appendChild(columns);
+        }
+
+        // Auto-load default category on initialization
+        window.addEventListener('DOMContentLoaded', () => {
+          const defaultTab = document.querySelector('#sim-dynamic-tabs li.is-active');
+          loadDynamicSimResults('nonoise', defaultTab);
+        });
+      </script>
+      </div>
+
+    <h3 class="title is-4" style="margin-top: 3rem;">Real-World Experiments</h3>
     <div class="content has-text-centered" style="margin-bottom: 3rem;">
-      <img src="static/images/results/real_in_one.png" alt="Flight trajectories generated by our unified MPPI framework on three tracks of increasing difficulty: Circle (a-c), Figure-8 (d-f), and Split-S (g-i). All the flight trajectories are tested under identical system dynamics and controller settings." style="width: 100%; border-radius: 10px;"/>
-      <p class="has-text-centered" style="margin-top: 0.5rem;">
-        Real-world flight validation of the three control objectives executed within our unified MPPI framework. The panels depict the quadrotor's performance using: (left) Trajectory Tracking, (middle) Contouring Control, and (right) the proposed reference-free Gate Progress objective. All three strategies were deployed using identical dynamics parameters and a consistent control input structure.
+      <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+        For the real-world validation, we employed a customized quadrotor relying exclusively on an onboard embedded Jetson module and a RealSense depth camera for perception.
       </p>
-  </div>
-    <h3 class="title is-5">Videos</h3>
-    <div class="columns is-vcentered">
-        <div class="column is-one-third">
-            <div class="field">
-                <label class="label">Objective</label>
-                <div class="control">
-                    <div class="select is-fullwidth">
-                        <select id="realObjective">
-                            <option value="MPC">Trajectory Tracking</option>
-                            <option value="MPCC">Contouring Control</option>
-                            <option value="RL">Gate Progress (Ours)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-          <div class="video-container">
-              <img id="realResultImage" src="static/images/results/real_tracking.png" alt="Real-world Result Image" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
 
-              <video id="realVideoPlayer" src="static/videos/results/real_tracking.mp4" controls muted loop preload="metadata" style="width: 100%; border-radius: 10px;"></video>
-              <p id="realVideoDescription" class="has-text-centered" style="margin-top: 0.5rem;"></p>
-          </div>
+      <div class="tabs is-centered is-toggle is-toggle-rounded" style="margin-bottom: 2rem;">
+        <ul>
+          <li class="is-active" id="tab-track" onclick="switchTab('track')">
+            <a>Continuous Track</a>
+          </li>
+          <li id="tab-p2p" onclick="switchTab('p2p')">
+            <a>Point-to-Point</a>
+          </li>
+        </ul>
       </div>
-    </div>
+
+      <div id="content-track" style="display: block;">
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 10px;">
+              <source src="static/videos/results/nominal.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 10px;">
+              <source src="static/videos/results/oriennoise.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 10px;">
+              <source src="static/videos/results/posnoise.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <img src="static/images/results/Figure_1.png" alt="Track Trajectory 1" style="width: 100%; border-radius: 10px;"/>
+          </div>
+          <div class="column is-one-third">
+            <img src="static/images/results/Figure_3.png" alt="Track Trajectory 2" style="width: 100%; border-radius: 10px;"/>
+          </div>
+          <div class="column is-one-third">
+            <img src="static/images/results/Figure_2.png" alt="Track Trajectory 3" style="width: 100%; border-radius: 10px;"/>
+          </div>
+        </div>
+        <p class="has-text-centered" style="margin-top: 0.5rem;">
+          Trajectories from real-world experiments on a circular track featuring two racing gates subject to position and orientation perturbations. The quadrotor successfully navigated the highly compact track utilizing exclusively onboard depth perception.
+        </p>
+      </div>
+
+      <div id="content-p2p" style="display: none;">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 10px;">
+              <source src="static/videos/results/point2point.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <p class="has-text-centered" style="margin-top: 0.5rem;">
+          Flight trajectories of the point-to-point flight task featuring a single gate deployed in various configurations. The system successfully maneuvered through the gate even under severe initial displacement errors and orientation perturbations.
+        </p>
+      </div>
+
+      <script>
+        function switchTab(tabId) {
+          // Remove active class from all tabs
+          document.getElementById('tab-track').classList.remove('is-active');
+          document.getElementById('tab-p2p').classList.remove('is-active');
+          
+          // Hide all content
+          document.getElementById('content-track').style.display = 'none';
+          document.getElementById('content-p2p').style.display = 'none';
+          
+          // Add active class to clicked tab and show its content
+          document.getElementById('tab-' + tabId).classList.add('is-active');
+          document.getElementById('content-' + tabId).style.display = 'block';
+        }
+      </script>
+
+  </div>
+    
   </div>
 </section>
+
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
       </div>
-      <pre id="bibtex-code"><code>@misc{zhao2025rethinkingreferencetrajectoriesagile,
-        title={Rethinking Reference Trajectories in Agile Drone Racing: A Unified Reference-Free Model-Based Controller via MPPI}, 
-        author={Fangguo Zhao and Xin Guan and Shuo Li},
+      <pre id="bibtex-code"><code>@misc{zhao2025visionguided,
+        title={Vision-Guided MPPI for Agile Drone Racing: Navigating Arbitrary Gate Poses via Neural Signed Distance Fields}, 
+        author={Fangguo Zhao and Hanbing Zhang and Zhouheng Li and Xin Guan and Shuo Li},
         year={2025},
-        eprint={2509.14726},
-        archivePrefix={arXiv},
-        primaryClass={cs.RO},
-        url={https://arxiv.org/abs/2509.14726}, 
+        note={Under review},
   }</code></pre>
     </div>
 </section>
+
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website; we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      // --- Simulation Logic ---
-      
-  
-      // --- Real-World Logic ---
-      const realObjectiveSelect = document.getElementById('realObjective');
-      const realResultImage = document.getElementById('realResultImage'); // 新增：获取图片元素
-      const realVideoPlayer = document.getElementById('realVideoPlayer');
-      const realVideoDescription = document.getElementById('realVideoDescription');
-  
-      function updateRealContent() {
-          const objective = realObjectiveSelect.value;
-          
-          const baseSrc = `results/real_${objective}`;
-          const imageSrc = `static/images/${baseSrc}.png`; // 新增：构建图片路径
-          const videoSrc = `static/videos/${baseSrc}_s.mp4`;
-          
-          realResultImage.src = imageSrc; // 新增：更新图片源
-          realVideoPlayer.src = videoSrc;
-          realVideoPlayer.load();
-          
-          const objectiveText = realObjectiveSelect.options[realObjectiveSelect.selectedIndex].text;
-          realVideoDescription.textContent = `Showing: Real-world flight with ${objectiveText} objective.`;
-      }
-  
-      realObjectiveSelect.addEventListener('change', updateRealContent);
-  
-      updateRealContent(); // 初始化
-  });
-  </script>
-
-  </body>
-  </html>
+</body>
+</html>
