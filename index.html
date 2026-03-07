@@ -245,112 +245,114 @@
       <div id="dynamic-sim-results-container" style="margin-bottom: 2rem;">
         </div>
 
-      <script>
-        /**
-         * 动态探测该目录下有多少张有效的图片 (1.png, 2.png...)
-         */
-        async function countImagesInDirectory(basePath) {
-            return new Promise(resolve => {
-                let count = 0;
-                const checkNextImage = () => {
-                    const tempImg = new Image();
-                    tempImg.onload = () => {
-                        count++;
-                        checkNextImage(); // 成功则继续探查下一张
-                    };
-                    tempImg.onerror = () => {
-                        // 失败说明该序列号的图片不存在，探测结束。
-                        // 如果连 1.png 都没有，保底返回 1 以防止随机数生成报错。
-                        resolve(count === 0 ? 1 : count);
-                    };
-                    tempImg.src = `${basePath}/${count + 1}.png`;
-                };
-                checkNextImage();
-            });
-        }
-
-        function loadDynamicSimResults(category, clickedElement) {
-          // Update active tab styling
-          if (clickedElement) {
-            const tabs = document.querySelectorAll('#sim-dynamic-tabs li');
-            tabs.forEach(tab => tab.classList.remove('is-active'));
-            clickedElement.classList.add('is-active');
+        <script>
+          /**
+           * 动态探测该目录下有多少张有效的图片 (1.png, 2.png...)
+           */
+          async function countImagesInDirectory(basePath) {
+              return new Promise(resolve => {
+                  let count = 0;
+                  const checkNextImage = () => {
+                      const tempImg = new Image();
+                      tempImg.onload = () => {
+                          count++;
+                          checkNextImage(); // 成功则继续探查下一张
+                      };
+                      tempImg.onerror = () => {
+                          // 失败说明该序列号的图片不存在，探测结束。
+                          // 如果连 1.png 都没有，保底返回 1 以防止随机数生成报错。
+                          resolve(count === 0 ? 1 : count);
+                      };
+                      tempImg.src = `${basePath}/${count + 1}.png`;
+                  };
+                  checkNextImage();
+              });
           }
-
-          const container = document.getElementById('dynamic-sim-results-container');
-          container.innerHTML = ''; 
-
-          // Position noise 0.3 is only for speeds 5 to 9, others are 5 to 10
-          const speeds = category === 'noise03' ? [5, 6, 7, 8, 9] : [5, 6, 7, 8, 9, 10];
-          
-          // 使用 flex 垂直居中排列，不再使用多列网格
-          const flexContainer = document.createElement('div');
-          flexContainer.className = 'is-flex is-flex-direction-column is-align-items-center';
-          flexContainer.style.gap = '3rem'; // 设置上下图片之间的间距
-
-          // Step 1: 先构建骨架并展示灰色占位图，防止页面抖动
-          const imageTasks = [];
-
-          speeds.forEach(speed => {
-            const rowWrapper = document.createElement('div');
-            // 限制单张图片容器的最大宽度，以免在宽屏下占满全屏显得过于庞大
-            rowWrapper.style.width = '100%';
-            rowWrapper.style.maxWidth = '800px'; 
+  
+          function loadDynamicSimResults(category, clickedElement) {
+            // Update active tab styling
+            if (clickedElement) {
+              const tabs = document.querySelectorAll('#sim-dynamic-tabs li');
+              tabs.forEach(tab => tab.classList.remove('is-active'));
+              clickedElement.classList.add('is-active');
+            }
+  
+            const container = document.getElementById('dynamic-sim-results-container');
+            container.innerHTML = ''; 
+  
+            // Position noise 0.3 is only for speeds 5 to 9, others are 5 to 10
+            const speeds = category === 'noise03' ? [5, 6, 7, 8, 9] : [5, 6, 7, 8, 9, 10];
             
-            const imgWrapper = document.createElement('div');
-            imgWrapper.style.display = 'flex';
-            imgWrapper.style.flexDirection = 'column';
-            imgWrapper.style.alignItems = 'center';
-
-            const img = document.createElement('img');
-            img.alt = `${category} trajectory at speed ${speed}`;
-            img.style.width = '100%';
-            img.style.minHeight = '300px'; // 根据竖排图片的预期比例设置一个稍微大点的骨架高度
-            img.style.borderRadius = '8px';
-            img.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
-            img.style.backgroundColor = '#e0e0e0'; // 灰色骨架颜色
-            
-            const label = document.createElement('p');
-            label.className = 'has-text-weight-semibold is-size-5 mt-3'; // 稍微调大一点字体
-            label.innerText = `Speed ${speed}`;
-
-            imgWrapper.appendChild(img);
-            imgWrapper.appendChild(label);
-            rowWrapper.appendChild(imgWrapper);
-            flexContainer.appendChild(rowWrapper);
-
-            imageTasks.push({ speed, imgElement: img });
+            // 强制使用内联 CSS 样式，确保绝对是垂直单列居中排列，不再依赖外部框架类名
+            const flexContainer = document.createElement('div');
+            flexContainer.style.display = 'flex';
+            flexContainer.style.flexDirection = 'column'; 
+            flexContainer.style.alignItems = 'center';
+            flexContainer.style.gap = '3rem'; // 设置上下图片之间的间距
+  
+            // Step 1: 先构建骨架并展示灰色占位图，防止页面抖动
+            const imageTasks = [];
+  
+            speeds.forEach(speed => {
+              const rowWrapper = document.createElement('div');
+              // 限制单张图片容器的最大宽度，以免在宽屏下占满全屏显得过于庞大
+              rowWrapper.style.width = '100%';
+              rowWrapper.style.maxWidth = '800px'; 
+              
+              const imgWrapper = document.createElement('div');
+              imgWrapper.style.display = 'flex';
+              imgWrapper.style.flexDirection = 'column';
+              imgWrapper.style.alignItems = 'center';
+  
+              const img = document.createElement('img');
+              img.alt = `${category} trajectory at speed ${speed}`;
+              img.style.width = '100%';
+              img.style.minHeight = '300px'; // 根据竖排图片的预期比例设置一个稍微大点的骨架高度
+              img.style.borderRadius = '8px';
+              img.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+              img.style.backgroundColor = '#e0e0e0'; // 灰色骨架颜色
+              
+              const label = document.createElement('p');
+              label.className = 'has-text-weight-semibold is-size-5 mt-3'; // 稍微调大一点字体
+              label.innerText = `Max Velocity ${speed} [m/s]`;
+  
+              imgWrapper.appendChild(img);
+              imgWrapper.appendChild(label);
+              rowWrapper.appendChild(imgWrapper);
+              flexContainer.appendChild(rowWrapper);
+  
+              imageTasks.push({ speed, imgElement: img });
+            });
+  
+            container.appendChild(flexContainer);
+  
+            // Step 2: 异步探查对应目录下的图片数量，然后随机选择加载
+            imageTasks.forEach(async (task) => {
+               const basePath = `static/images/results/simulation_results/${category}/${task.speed}`;
+               
+               // 动态计算目录下到底有多少张图
+               const maxAvailableImages = await countImagesInDirectory(basePath);
+               
+               // 从中随机挑选一张
+               const randomImgIndex = Math.floor(Math.random() * maxAvailableImages) + 1;
+               const finalSrc = `${basePath}/${randomImgIndex}.png`;
+               
+               task.imgElement.onload = () => {
+                   // 图片实际加载成功后去除骨架底色和限定高度
+                   task.imgElement.style.minHeight = 'auto'; 
+                   task.imgElement.style.backgroundColor = 'transparent';
+               };
+               
+               task.imgElement.src = finalSrc;
+            });
+          }
+  
+          // 页面初始化时默认加载第一项
+          window.addEventListener('DOMContentLoaded', () => {
+            const defaultTab = document.querySelector('#sim-dynamic-tabs li.is-active');
+            loadDynamicSimResults('nonoise', defaultTab);
           });
-
-          container.appendChild(flexContainer);
-
-          // Step 2: 异步探查对应目录下的图片数量，然后随机选择加载
-          imageTasks.forEach(async (task) => {
-             const basePath = `static/images/results/simulation_results/${category}/${task.speed}`;
-             
-             // 动态计算目录下到底有多少张图
-             const maxAvailableImages = await countImagesInDirectory(basePath);
-             
-             // 从中随机挑选一张
-             const randomImgIndex = Math.floor(Math.random() * maxAvailableImages) + 1;
-             const finalSrc = `${basePath}/${randomImgIndex}.png`;
-             
-             task.imgElement.onload = () => {
-                 // 图片实际加载成功后去除骨架底色和限定高度
-                 task.imgElement.style.minHeight = 'auto'; 
-                 task.imgElement.style.backgroundColor = 'transparent';
-             };
-             
-             task.imgElement.src = finalSrc;
-          });
-        }
-
-        // 页面初始化时默认加载第一项
-        window.addEventListener('DOMContentLoaded', () => {
-          const defaultTab = document.querySelector('#sim-dynamic-tabs li.is-active');
-          loadDynamicSimResults('nonoise', defaultTab);
-        });
-      </script>
+        </script>
       </div>
 
     <h3 class="title is-4" style="margin-top: 3rem;">Real-World Experiments</h3>
